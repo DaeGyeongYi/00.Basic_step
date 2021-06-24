@@ -6,13 +6,13 @@
 
 2. Github repository 생성
 
-   ![image-20210623170259834](C:/Users/DAEGYEONGLEE/Desktop/uploads/git/image-20210623170259834.png)
+   ![image-20210623170259834](HOW%20TO%20GITHUB%203.github.assets/image-20210623170259834.png)
 
 3. Repository default branch 변경 (settings -> repositories)
 
    - main -> master로 변경
 
-   ![tempsnip](C:/Users/DAEGYEONGLEE/Desktop/uploads/git/tempsnip.png)
+   ![tempsnip](HOW%20TO%20GITHUB%203.github.assets/tempsnip.png)
 
 ## **명령어**
 
