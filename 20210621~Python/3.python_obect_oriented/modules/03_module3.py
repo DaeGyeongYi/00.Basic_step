@@ -1,0 +1,3 @@
+import mtest
+
+mtest.test()

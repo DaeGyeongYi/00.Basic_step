@@ -45,6 +45,10 @@ print(s) #{1, 2, 3, 4, 5, 6}
 s.remove(3)
 print(s) #{1, 2, 4, 5, 6}
 
+#없는 요소 삭제
+s.remove(10) #에러
+s.discard(10) #에러 없음
+
 # 전체 요소 삭제
 s.clear()
 print(s) #set() : 빈 집합의 의미
@@ -52,3 +56,6 @@ print(s) #set() : 빈 집합의 의미
 # 집합 삭제
 del s #s 변수 삭제됨
 print(s) #NameError: name 's' is not defined
+
+s= {1,2,3,4}
+print(3 in s)
