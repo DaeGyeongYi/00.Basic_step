@@ -1,22 +1,62 @@
-# 06_classmethod.py
+from collections import deque #큐를 만들기 위해 deque 모듈을 불러왔어용
 
-# 클래스 메서드 : @staticmethod 키워드 사용
-# 클래스명. 메서드 접근
+def bfs(graph, start, visited):
+    queue = deque([start]) #시작하면서 바로 start를 원소르 가지는 queue만들기
+    visited[start]=True #현재 노드를 방문처리
 
-class Math :
-    @staticmethod
-    def add(a,b):
-        return a + b
+    while queue:
+        v = queue.popleft()
+        print(v, "를 방문했습니다.")
+        for i in graph[v]:
+            if not visited[i]:
+                print("%d의 인접노드 중 방문한적 없는 %d를 큐에 추가하고 방문처리"%(v,i))
+                queue.append(i)
+                visited[i] = True
+        print("========현재 큐에 남은 노드 목록:",queue,"\n")
 
-    @staticmethod
-    def multiply(a,b):
-        return(a*b)
+graph = [
+    [],
+    [2,3,8],
+    [1,7],
+    [1,4,5],
+    [3,5],
+    [3,4],
+    [7],
+    [2,6,8],
+    [1,7]
+]
+visited = [False]*9
+bfs(graph,1,visited)
 
-# 클래스 메서드 사용
-print("클래스 메서드로 접근 : ",  Math.add(10,20))
-print("클래스 메서드로 접근 : ",  Math.multiply(10,20))
+'''
+1 를 방문했습니다.
+1의 인접노드 중 방문한적 없는 2를 큐에 추가하고 방문처리
+1의 인접노드 중 방문한적 없는 3를 큐에 추가하고 방문처리
+1의 인접노드 중 방문한적 없는 8를 큐에 추가하고 방문처리
+========현재 큐에 남은 노드 목록: deque([2, 3, 8]) 
 
-#
-m_obj = Math()
-print("객체(인스탄스) 메서드로 접근 : ",m_obj.add(3,4))
-print("객체(인스탄스) 메서드로 접근 : ",m_obj.multiply(3,4))
+2 를 방문했습니다.
+2의 인접노드 중 방문한적 없는 7를 큐에 추가하고 방문처리
+========현재 큐에 남은 노드 목록: deque([3, 8, 7]) 
+
+3 를 방문했습니다.
+3의 인접노드 중 방문한적 없는 4를 큐에 추가하고 방문처리
+3의 인접노드 중 방문한적 없는 5를 큐에 추가하고 방문처리
+========현재 큐에 남은 노드 목록: deque([8, 7, 4, 5]) 
+
+8 를 방문했습니다.
+========현재 큐에 남은 노드 목록: deque([7, 4, 5]) 
+
+7 를 방문했습니다.
+7의 인접노드 중 방문한적 없는 6를 큐에 추가하고 방문처리
+========현재 큐에 남은 노드 목록: deque([4, 5, 6]) 
+
+4 를 방문했습니다.
+========현재 큐에 남은 노드 목록: deque([5, 6]) 
+
+5 를 방문했습니다.
+========현재 큐에 남은 노드 목록: deque([6]) 
+
+6 를 방문했습니다.
+========현재 큐에 남은 노드 목록: deque([]) 
+'''
