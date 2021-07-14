@@ -4,7 +4,8 @@ class Stack {
 	int[] data;
 	int top = -1;
 	Stack(){
-		
+		data = new int[50];
+		top = -1;
 	}
 	void push(int e) {
 		data[++top] =  e;

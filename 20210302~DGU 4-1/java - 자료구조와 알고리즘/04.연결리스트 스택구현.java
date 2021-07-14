@@ -4,19 +4,19 @@ class Node {
 	public Node next;
 	Node(int e) { data = e; next =null;}
 }
-// head¿¡¼­ °¡Àå Ã¹¹øÂ° ³ëµå¸¦ ÂüÁ¶ÇÏ°í ÀÖ¾î¾ßÇÔ. 
+// headì—ì„œ ê°€ìž¥ ì²«ë²ˆì§¸ ë…¸ë“œë¥¼ ì°¸ì¡°í•˜ê³  ìžˆì–´ì•¼í•¨. 
 class Stack {
 	Node head;
 
 	Stack(){
-		head = null; // »ç½Ç »ó top°ú °°Àº ¿ªÇÒ 
+		head = null; // ì‚¬ì‹¤ ìƒ topê³¼ ê°™ì€ ì—­í•  
 	}
 	void push(int e) {
 		Node node = new Node(e);
-		// e¶ó´Â µ¥ÀÌÅÍ¸¦ ´ã°íÀÖ´Â ³ëµå»ý¼º
+		// eë¼ëŠ” ë°ì´í„°ë¥¼ ë‹´ê³ ìžˆëŠ” ë…¸ë“œìƒì„±
 		node.next = head;
-		// »õ·Î¿î ³ëµåÀÇ next(´ÙÀ½ ³ëµå¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ)¿¡ head°¡ °¡¸®Å°´ø °÷ÀÇ °ªÀ» ÀÔ·Â
-		head = node; // head´Â ÀÌÁ¦ »õ·Î »ý¼ºµÈ ³ëµå¸¦ °¡¸®Å´
+		// ìƒˆë¡œìš´ ë…¸ë“œì˜ next(ë‹¤ìŒ ë…¸ë“œë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°)ì— headê°€ ê°€ë¦¬í‚¤ë˜ ê³³ì˜ ê°’ì„ ìž…ë ¥
+		head = node; // headëŠ” ì´ì œ ìƒˆë¡œ ìƒì„±ëœ ë…¸ë“œë¥¼ ê°€ë¦¬í‚´
 	}
 	void pop () {
 		head = head.next;
@@ -41,12 +41,16 @@ public class Main {
 		System.out.print("top-> ");
 		for(int i =0; i<3; i++) {
 			System.out.print(stack.top()+" ");
+			stack.pop();
 		}
-		stack.pop();
-		stack.pop();
-		System.out.print("top-> ");
-		while(stack.empty()==true) {
-			System.out.print(stack.top());
+		stack.push(30);
+		stack.push(20);
+		stack.push(10);
+		System.out.print("\ntop-> ");
+		
+		while(stack.empty()!=true) {
+			System.out.print(stack.top()+" ");
+			stack.pop();
 		}
 	}
 
