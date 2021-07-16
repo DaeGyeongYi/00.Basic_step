@@ -14,13 +14,11 @@ def binSearch(ary, fData) :
     return  pos #아무일도 없이 함수가 종료되면 에러
 
 ## 변수
-# dataAry = [50, 60, 105, 120, 150, 160, 162, 168, 177, 188]
-# findData = 166 # 할머니키
 import random
 dataAry = [ random.randint(1000000, 9999999) for _ in range(500) ]
 dataAry.insert(250, 5000000)
 dataAry.sort()
-findData = 5000000
+findData = int(input("찾는 데이터 입력:"))
 
 ## 메인
 print('배열 -->', dataAry)
